@@ -1,7 +1,7 @@
 
-# Code Detective VS Code Extension
+# Code Detective CLI
 
-A VS Code extension to detect syntax errors and other code issues for Python, JavaScript, TypeScript, JSX, C++, and tax code using static analysis and machine learning.
+A CLI to detect syntax errors and other code issues for Python, JavaScript, TypeScript, JSX, C++, and tax code using static analysis and machine learning.
 
 ## Scope
 
