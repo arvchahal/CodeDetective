@@ -1,6 +1,7 @@
-import pylint
+import pylint.lint
 import subprocess
-
+import argparse
+import cppcheck_codequality
 class AnalyzeStatic():
     def __init__(self, file_path):
         self.file_path = file_path
@@ -19,9 +20,14 @@ class AnalyzeStatic():
         return self.file_path.split('.')[-1]
 
     def run_pylint(self):
+        print('Running pylint')
         pylint_opts = [self.file_path]
-        pylint_output = pylint.lint.Run(pylint_opts, do_exit=False)
-        return pylint_output.linter.stats
+        try:
+            pylint_output = pylint.lint.Run(pylint_opts)
+            output = pylint_output.linter.stats
+            self.results(output)
+        except Exception as e:
+            print(f"Error running pylint: {e}")
 
     def run_eslint(self):
         result = subprocess.run(['eslint', self.file_path, '-f', 'json'], capture_output=True, text=True)
@@ -36,5 +42,16 @@ class AnalyzeStatic():
             return self.linter()
         else:
             return "Unsupported file type"
+    def results(self,output):
+        print(output)
 
 
+def main():
+    parser = argparse.ArgumentParser(description="Analyze syntax of a file")
+    parser.add_argument("filepath", help="Path to file to be analyzed")
+    args = parser.parse_args()
+    analyzer = AnalyzeStatic(args.filepath)
+    analyzer.lint()
+
+if __name__ == '__main__':
+    main()
