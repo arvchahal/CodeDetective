@@ -1,6 +1,8 @@
 package main
 
-import "codedetective/cmd"
+import (
+	"codedetective/cmd"
+)
 
 func main() {
 	cmd.Execute()
