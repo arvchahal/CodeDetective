@@ -1,7 +1,6 @@
 import pylint.lint
 import subprocess
 import argparse
-import cppcheck_codequality
 class AnalyzeStatic():
     def __init__(self, file_path):
         self.file_path = file_path
@@ -31,11 +30,13 @@ class AnalyzeStatic():
 
     def run_eslint(self):
         result = subprocess.run(['eslint', self.file_path, '-f', 'json'], capture_output=True, text=True)
+        self.results(result)
         return result.stdout
 
     def run_cppcheck(self):
         result = subprocess.run(['cppcheck', '--enable=all', '--xml', '--xml-version=2', self.file_path], capture_output=True, text=True)
-        return result.stdout
+        self.results(result)
+        return result
 
     def lint(self):
         if self.linter:
