@@ -1,0 +1,19 @@
+{
+  "name": "codedetective",
+  "version": "1.0.0",
+  "description": "A CLI to detect syntax errors and other code issues for Python, JavaScript, TypeScript, JSX, C++, and tax code using static analysis and machine learning.",
+  "main": "shit.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/js": "^9.8.0",
+    "eslint": "^9.8.0",
+    "eslint-plugin-react": "^7.35.0",
+    "globals": "^15.8.0",
+    "typescript-eslint": "^7.17.0"
+  }
+}
