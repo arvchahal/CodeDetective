@@ -1,7 +1,7 @@
 
 # Code Detective CLI
 
-A CLI to detect syntax errors and other code issues for Python, JavaScript, TypeScript, JSX, C++, and tax code using static analysis and machine learning.
+A CLI to detect syntax errors and other code issues for Python and JS, using syntax analysis and advanced machine learning to detect errors
 
 ## Scope
 
