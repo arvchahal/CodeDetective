@@ -1,6 +1,7 @@
 import pylint.lint
 import subprocess
 import argparse
+import os
 class AnalyzeStatic():
     def __init__(self, file_path):
         self.file_path = file_path
@@ -29,9 +30,13 @@ class AnalyzeStatic():
             print(f"Error running pylint: {e}")
 
     def run_eslint(self):
-        result = subprocess.run(['eslint', self.file_path, '-f', 'json'], capture_output=True, text=True)
-        self.results(result)
-        return result.stdout
+        print(self.file_path)
+        #eslint is weird and does not accept absolute path in the os.system exec for some reason
+        eslint_relative_path = self.file_path.split('codedetective/')[1]
+        result = os.system(f"eslint {eslint_relative_path}")
+        
+        print(result)
+        return result
 
     def run_cppcheck(self):
         result = subprocess.run(['cppcheck', '--enable=all', '--xml', '--xml-version=2', self.file_path], capture_output=True, text=True)
