@@ -1,7 +1,7 @@
 
 # Code Detective CLI
 
-A CLI to detect syntax errors and other code issues for Python, JavaScript, TypeScript, JSX, C++, and tax code using static analysis and machine learning.
+A CLI to detect syntax errors and other code issues for Python and JS, using syntax analysis and advanced machine learning to detect errors
 
 ## Scope
 
@@ -9,9 +9,10 @@ This project aims to provide comprehensive code error detection across multiple 
 
 ## Features
 
-- **Static Analysis:** Uses tools like `pylint`, `flake8`, `mypy`, `eslint`, `cppcheck`, and `clang-tidy`.
+- **Static Analysis:** Uses tools like `pylint`, `flake8`, `mypy`, `eslint`, 
 - **Machine Learning:** Utilizes transformer models like CodeBERT for deeper code understanding.
-- **Multi-Language Support:** Handles Python, JavaScript, TypeScript, and C++.
+- **Multi-Language Support:** Handles Python and JavaScript
+- Planning to add support for JSX and TSX soon!
 
 
 ## Usage
